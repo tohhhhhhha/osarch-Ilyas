@@ -1,0 +1,72 @@
+Storage:
+
+    Data:
+
+      Free: 242,21 GB (242 211 643 392 bytes)
+      Capacity: 494,38 GB (494 384 795 648 bytes)
+      Mount Point: /System/Volumes/Data
+      File System: APFS
+      Writable: Yes
+      Ignore Ownership: No
+      BSD Name: disk3s5
+      Volume UUID: D8FA2269-B752-4F0A-B92B-9CFAD7420131
+      Physical Drive:
+          Device Name: APPLE SSD AP0512Z
+          Media Name: AppleAPFSMedia
+          Medium Type: SSD
+          Protocol: Apple Fabric
+          Internal: Yes
+          Partition Map Type: Unknown
+          S.M.A.R.T. Status: Verified
+
+    Macintosh HD:
+
+      Free: 242,21 GB (242 211 643 392 bytes)
+      Capacity: 494,38 GB (494 384 795 648 bytes)
+      Mount Point: /
+      File System: APFS
+      Writable: No
+      Ignore Ownership: No
+      BSD Name: disk3s1s1
+      Volume UUID: 8A25D5F2-D2AF-445A-889C-F42261180603
+      Physical Drive:
+          Device Name: APPLE SSD AP0512Z
+          Media Name: AppleAPFSMedia
+          Medium Type: SSD
+          Protocol: Apple Fabric
+          Internal: Yes
+          Partition Map Type: Unknown
+          S.M.A.R.T. Status: Verified
+
+NVMExpress:
+
+    Apple SSD Controller:
+
+        APPLE SSD AP0512Z:
+
+          Capacity: 500,28 GB (500 277 792 768 bytes)
+          TRIM Support: Yes
+          Model: APPLE SSD AP0512Z
+          Revision: 561.100.
+          Serial Number: 0ba01e4b602d161b
+          Detachable Drive: No
+          BSD Name: disk0
+          Partition Map Type: GPT (GUID Partition Table)
+          Removable Media: No
+          S.M.A.R.T. status: Verified
+          Volumes:
+            iSCPreboot:
+              Capacity: 524,3 MB (524 288 000 bytes)
+              BSD Name: disk0s1
+              Content: Apple_APFS_ISC
+            Macintosh HD:
+              Capacity: 494,38 GB (494 384 795 648 bytes)
+              BSD Name: disk0s2
+              Content: Apple_APFS
+            Recovery:
+              Capacity: 5,37 GB (5 368 664 064 bytes)
+              BSD Name: disk0s3
+              Content: Apple_APFS_Recovery
+
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1   460Gi    12Gi   226Gi     5%    459k  2.4G    0%   /
