@@ -1,8 +1,8 @@
 # Lab 1 — Your first virtual machine
 
-Pair: none (worked alone) 
- Driver first half: me
-Machine: MacBook, Apple M2, 8 GB RAM, macOS, VMware Fusion
+Pair: none (worked alone)   
+ Driver first half: me  
+Machine: MacBook, Apple M2, 8 GB RAM, macOS, VMware Fusion  
 Date: 17.10.2026
 
 ## What I did
