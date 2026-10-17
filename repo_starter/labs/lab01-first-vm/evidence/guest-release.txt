@@ -1,0 +1,4 @@
+Distributor ID:	Debian
+Description:	Debian GNU/Linux forky/sid
+Release:	n/a
+Codename:	forky
