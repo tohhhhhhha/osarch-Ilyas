@@ -1,0 +1,28 @@
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-5UHTR3O
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : vmxnet3 Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-0C-29-94-83-8C
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::414:470b:5d35:beac%2(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.246.130(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Sunday, October 25, 2026 12:35:56 AM
+   Lease Expires . . . . . . . . . . : Sunday, October 25, 2026 1:05:38 AM
+   Default Gateway . . . . . . . . . : 192.168.246.2
+   DHCP Server . . . . . . . . . . . : 192.168.246.254
+   DHCPv6 IAID . . . . . . . . . . . : 335547433
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-32-6F-69-3F-00-0C-29-94-83-8C
+   DNS Servers . . . . . . . . . . . : 192.168.246.2
+   Primary WINS Server . . . . . . . : 192.168.246.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
