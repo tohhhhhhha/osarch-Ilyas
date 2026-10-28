@@ -1,2 +1,6 @@
+=== ticket1-debian ===
+Total snapshots: 1
+clean-install
+=== ticket1-windows ===
 Total snapshots: 1
 clean-install
