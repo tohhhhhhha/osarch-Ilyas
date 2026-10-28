@@ -1,0 +1,5 @@
+Apple M2
+CPU cores: 8
+Memory: 8 GB
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   460Gi   279Gi   154Gi    65%    1.7M  1.6G    0%   /System/Volumes/Data
