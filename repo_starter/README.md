@@ -45,5 +45,3 @@ Week __ — `____` : [tools/____.md](tools/)
 | Lab 2 | Claude | explained the steps when I got stuck  |
 | Ticket 1 | Claude | gave instructions and terminal commands to fix errors, helped write BUILD.md and README.md. I built both VMs myself. All screenshots, numbers and IPs are from my own machines |
 
-> Declaring this costs nothing. Not declaring it, when it comes up at the
-> defence, costs the assignment.
