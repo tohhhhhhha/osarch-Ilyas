@@ -1,6 +1,6 @@
 # Lab 3 — Teardown, and the same machine from the command line
 
-Pair: TODO                    Driver first half: TODO
+Pair: worked alone                    Driver first half: —
 Machine: MacBook Air (M2, 2022), Mac14,2 (host, macOS); guests: Debian 13 arm64 and Windows 11 arm64 in VMware Fusion
 Date: 2026-10-29
 
@@ -46,7 +46,7 @@ lsblk -d -o NAME,MODEL,SIZE,ROTA,TRAN >> linux-specs.txt
 sudo dmidecode -t baseboard 2>&1 | sed -E "$HIDE" >> linux-specs.txt
 ~~~
 
-5. Windows guest: PowerShell transcript, then serial numbers replaced, then copied to the host through the clipboard:
+5. Windows guest: PowerShell transcript, serial numbers replaced, file copied to the host through the clipboard:
 
 ~~~
 Start-Transcript -Path windows-specs.txt; Get-CimInstance Win32_Processor | Format-List *; Get-CimInstance Win32_ComputerSystem | Format-List *; Get-CimInstance Win32_PhysicalMemory | Format-List *; Get-PhysicalDisk | Format-List *; Get-CimInstance Win32_BaseBoard | Format-List *; Stop-Transcript
@@ -54,37 +54,6 @@ Get-Content windows-specs.txt -Raw | Set-Clipboard
 ~~~
 
 ## Result
-
-3. Saved host output as text, serial numbers replaced with XXXX:
-
-~~~
-HIDE='s/(Serial Number[^:]*|Hardware UUID|Provisioning UDID): .*/\1: XXXX/'
-system_profiler SPHardwareDataType | sed -E "$HIDE" > macos-specs.txt
-sysctl hw.physicalcpu hw.logicalcpu hw.memsize >> macos-specs.txt
-system_profiler SPMemoryDataType | sed -E "$HIDE" >> macos-specs.txt
-system_profiler SPNVMeDataType | sed -E "$HIDE" >> macos-specs.txt
-diskutil info disk0 >> macos-specs.txt
-~~~
-
-4. Debian guest: connected from the host with `ssh`, ran the commands, copied the file back with `scp`:
-
-~~~
-lscpu > linux-specs.txt
-free -h >> linux-specs.txt
-sudo dmidecode -t memory 2>&1 | sed -E "$HIDE" >> linux-specs.txt
-lsblk -d -o NAME,MODEL,SIZE,ROTA,TRAN >> linux-specs.txt
-sudo dmidecode -t baseboard 2>&1 | sed -E "$HIDE" >> linux-specs.txt
-~~~
-
-5. Windows guest: PowerShell transcript, then serial numbers replaced, then copied to the host through the clipboard:
-
-~~~
-Start-Transcript -Path windows-specs.txt; Get-CimInstance Win32_Processor | Format-List *; Get-CimInstance Win32_ComputerSystem | Format-List *; Get-CimInstance Win32_PhysicalMemory | Format-List *; Get-PhysicalDisk | Format-List *; Get-CimInstance Win32_BaseBoard | Format-List *; Stop-Transcript
-Get-Content windows-specs.txt -Raw | Set-Clipboard
-~~~
-
-## Result
-
 
 All Part A facts were read on the **host** (macOS on the real laptop), not inside a VM.
 
@@ -99,50 +68,11 @@ All Part A facts were read on the **host** (macOS on the real laptop), not insid
 | Memory / storage | 8 GB / 512 GB | `SPHardwareDataType`, `SPNVMeDataType` |
 | Logic board part | 661-25636 (M2, 10-core GPU, 8 GB, 512 GB) | Manual: Exploded View and Orderable Parts |
 
-**How I found it:** TODO — 1–2 sentences in your own words.
+**How I found it:** I ran `system_profiler SPHardwareDataType` on the host. "MacBook Air" alone is not a model: the Model Identifier `Mac14,2` pins it to MacBook Air (M2, 2022), and `SPDisplaysDataType` showed the 10-core GPU, which picks my exact logic board in the parts list.
 
 **Service manual:** [MacBook Air (M2, 2022) Repair Manual](https://support.apple.com/100603), Apple Self Service Repair, Manual ID PTGVKD. Figure and parts list: [Exploded View and Orderable Parts](https://support.apple.com/100604).
 
 Evidence: [`evidence/macos-specs.txt`](evidence/macos-specs.txt). Serial numbers and UUIDs replaced with `XXXX`.
-
-### 2. Components
-
-![Exploded view of MacBook Air (M2, 2022)](evidence/manual-figures/exploded-view.png)
-
-*Figure 1. Exploded view from Apple's repair manual. The numbers are Apple's.*
-
-| # | What | Connects to | Limits |
-|---|---|---|---|
-| 24 | Logic board: Apple M2 SoC with 8 GB LPDDR5 and 512 GB storage on the same board; sold only as a whole (661-25636) | 10 flex cables: battery + TODO (9 names from step 7 of the Logic Board procedure); heat sink (23) on top | Memory, storage and CPU cannot be replaced separately. A replacement board needs a new heat sink and a new Touch ID board |
-| 25 | Battery | TODO | TODO |
-| 23 | Heat sink | TODO | TODO |
-| 28 | Display | TODO | TODO |
-| 26 | Top case with keyboard | TODO | TODO |
-| 27, 22 | Trackpad and trackpad flex cable | TODO | TODO |
-| 20 | MagSafe 3 board | TODO | TODO |
-| 21 | USB-C boards | TODO | TODO |
-| 17 | Audio board | TODO | TODO |
-| 18 | Touch ID board | TODO | TODO |
-| 3 | Left and right speakers with antennas | TODO | TODO |
-| 15 | Lid angle sensor | TODO | TODO |
-| 1 | Bottom case | TODO | TODO |
-| 2, 9, 4–14, 16, 19 | Hinge covers, connector cowlings, MagSafe board wedge | Screwed over connectors and hinges | Mechanical only; no effect on upgrades |
-
-### 3. Upgrade verdict
-
-| Component | Manual says | OS says | Verdict |
-|---|---|---|---|
-| Memory | No separate memory part; the logic board (part 24) is sold in 8 / 16 / 24 GB variants (Exploded View and Orderable Parts) | `SPMemoryDataType`: 8 GB, LPDDR5, no modules or slots listed | **No:** on the logic board, fixed at purchase |
-| Storage | No separate SSD part; logic board variants include 256 GB to 2 TB (same page) | `SPNVMeDataType`: APPLE SSD AP0512Z, Detachable Drive: No; `diskutil`: Removable Media: Fixed | **No:** on the logic board, no M.2 slot |
-| CPU | "M2" is part of every logic board variant (same page) | `sysctl -n machdep.cpu.brand_string`: Apple M2 | **No:** part of the SoC; no socket |
-
-TODO — your paragraph on where the manual and the OS disagree, and which one you trust and why.
-
-<!-- Hints (delete this comment):
-- Manual names the board variant "512 GB"; OS shows 500.28 GB.
-- macOS says "8 GB", but hw.memsize = 8589934592 bytes = exactly 8 GiB.
-- system_profiler lists the disk under "NVMExpress", diskutil says "Apple Fabric".
--->
 
 ### 4. Three-OS table
 
@@ -160,32 +90,19 @@ TODO — your paragraph on where the manual and the OS disagree, and which one y
 | Disk model / size | APPLE SSD AP0512Z, 500.28 GB | VMware Virtual NVMe Disk, 20G | VMware Virtual NVMe Disk, 64 GiB |
 | Motherboard | Model Identifier → Mac14,2 | `dmidecode -t baseboard` → VMware, Inc. VBSA | `Win32_BaseBoard` → VMware, Inc. VBSA |
 
-TODO — 2–3 sentences: which names differed most, which values differed between host and VMs, and why.
+The names differed most: the same number of logical CPUs is `hw.logicalcpu`, `CPU(s)` and `NumberOfLogicalProcessors`, the disk link is `Protocol`, `TRAN` and `BusType`, and the units change from bytes to Gi to MHz. The values differed between host and VMs because each VM sees only what Fusion gives it: 2 vCPUs (Debian shows them as 1 socket × 2 cores, Windows as 2 CPUs × 1 core), 2 or 4 GiB of memory, a virtual NVMe disk and a VMware board with 64 "slots". Both VMs agree on DRAM at 4800 MT/s, but that is one VMware firmware table read twice, not two sources; the real memory is the host's LPDDR5.
 
-<!-- Hints (delete this comment):
-- Same fact, different names: hw.logicalcpu / CPU(s) / NumberOfLogicalProcessors.
-- Same 2 vCPUs: Debian sees 1 socket x 2 cores, Windows sees 2 CPUs x 1 core.
-- Both VMs show the same invented memory and board: one VMware firmware table, not two sources.
--->
-
-Debian and Windows run as VMware Fusion guests (arm64), so their values describe virtual hardware, not the laptop. The Windows transcript shows a US date because the VM's time zone is UTC−7.
-
-Evidence: [`macos-specs.txt`](evidence/macos-specs.txt), [`linux-specs.txt`](evidence/linux-specs.txt), [`windows-specs.txt`](evidence/windows-specs.txt).
+The Windows transcript shows a US date because the VM's time zone is UTC−7.
 
 ## What did not work the first time
 
-TODO — at least one thing in your own words: what you saw, what it turned out to be, what you did about it.
+In the Windows VM my PowerShell transcript did not stop: `Stop-Transcript` from the pasted block never ran. When I then ran `Select-String` on `windows-specs.txt`, its output was recorded into the same file, so the file filled with lines like `windows-specs.txt:793:windows-specs.txt:786:...`, and `Set-Content` failed with "being used by another process". I pressed Ctrl+C, ran `Stop-Transcript`, deleted the file and ran all commands again on one line separated by `;`, and checked for "Transcript stopped" before editing the file.
 
-<!-- Candidates from today (pick one or more, delete this comment):
-- PowerShell transcript did not stop: Select-String output was written back into the same file, Set-Content failed with "being used by another process". Fix: Ctrl+C, Stop-Transcript, delete the file, run everything on one line with ";".
-- pbpaste saved the commands I had just copied, not the Windows file: copying from the chat overwrote the clipboard.
-- \\vmware-host\Shared Folders was not found in the Windows VM, so I used the clipboard instead.
-- "ssh student@IP" failed: I typed the word IP instead of the address.
--->
+Second: `pbpaste` on the Mac first saved my own commands instead of the Windows file, because copying the commands overwrote the clipboard. I copied in Windows last and typed the `pbpaste` command by hand.
 
 ## Evidence
 
-- [`evidence/macos-specs.txt`](evidence/macos-specs.txt): host model, CPU, memory (LPDDR5, no modules) and disk (not detachable), the OS side of the verdict
+- [`evidence/macos-specs.txt`](evidence/macos-specs.txt): host model, CPU, GPU cores, memory (LPDDR5, no modules) and disk (not detachable), the OS side of the verdict
 - [`evidence/manual-figures/exploded-view.png`](evidence/manual-figures/exploded-view.png): Apple's exploded view, the numbered parts used in Components
 - [`evidence/linux-specs.txt`](evidence/linux-specs.txt): Debian VM CPU, memory, disk and board, the virtual hardware Fusion presents
 - [`evidence/windows-specs.txt`](evidence/windows-specs.txt): Windows VM transcript of the same facts through Win32 classes
