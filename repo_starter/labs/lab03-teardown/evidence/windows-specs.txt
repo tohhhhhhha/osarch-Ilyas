@@ -1,0 +1,361 @@
+**********************
+Windows PowerShell transcript start
+Start time: 20261028233427
+Username: XXXX
+RunAs User: XXXX
+Configuration Name: 
+Machine: XXXX
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 5264
+PSVersion: 5.1.26100.9457
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9457
+BuildVersion: 10.0.26100.9457
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is windows-specs.txt
+
+
+Availability                            : 3
+CpuStatus                               : 1
+CurrentVoltage                          :
+DeviceID                                : CPU0
+ErrorCleared                            :
+ErrorDescription                        :
+LastErrorCode                           :
+LoadPercentage                          : 21
+Status                                  : OK
+StatusInfo                              : 3
+AddressWidth                            : 64
+DataWidth                               : 64
+ExtClock                                :
+L2CacheSize                             : 4096
+L2CacheSpeed                            :
+MaxClockSpeed                           : 1997
+PowerManagementSupported                : False
+ProcessorType                           : 3
+Revision                                : 0
+SocketDesignation                       : CPU 0
+Version                                 : Model 0, Stepping 0
+VoltageCaps                             : 7
+Caption                                 : ARMv8 (64-bit) Family 8 Model 0 Revision   0
+Description                             : ARMv8 (64-bit) Family 8 Model 0 Revision   0
+InstallDate                             :
+Name                                    : Apple silicon
+ConfigManagerErrorCode                  :
+ConfigManagerUserConfig                 :
+CreationClassName                       : Win32_Processor
+PNPDeviceID                             :
+PowerManagementCapabilities             :
+SystemCreationClassName                 : Win32_ComputerSystem
+SystemName                              : DESKTOP-5UHTR3O
+CurrentClockSpeed                       : 1997
+Family                                  : 257
+OtherFamilyDescription                  :
+Role                                    : CPU
+Stepping                                : 0
+UniqueId                                : XXXX
+UpgradeMethod                           : 6
+Architecture                            : 12
+AssetTag                                :
+Characteristics                         : 108
+L3CacheSize                             : 0
+L3CacheSpeed                            : 0
+Level                                   : 0
+Manufacturer                            : Apple
+NumberOfCores                           : 1
+NumberOfEnabledCore                     : 2
+NumberOfLogicalProcessors               : 1
+PartNumber                              :
+ProcessorId                             : 00000000610F0000
+SecondLevelAddressTranslationExtensions : False
+SerialNumber                            : XXXX
+ThreadCount                             : 2
+VirtualizationFirmwareEnabled           : False
+VMMonitorModeExtensions                 : False
+PSComputerName                          :
+CimClass                                : root/cimv2:Win32_Processor
+CimInstanceProperties                   : {Caption, Description, InstallDate, Name...}
+CimSystemProperties                     : Microsoft.Management.Infrastructure.CimSystemProperties
+
+Availability                            : 3
+CpuStatus                               : 0
+CurrentVoltage                          :
+DeviceID                                : CPU1
+ErrorCleared                            :
+ErrorDescription                        :
+LastErrorCode                           :
+LoadPercentage                          : 25
+Status                                  : OK
+StatusInfo                              : 3
+AddressWidth                            : 64
+DataWidth                               : 64
+ExtClock                                :
+L2CacheSize                             : 4096
+L2CacheSpeed                            :
+MaxClockSpeed                           : 2000
+PowerManagementSupported                : False
+ProcessorType                           :
+Revision                                : 0
+SocketDesignation                       :
+Version                                 : Model 0, Stepping 0
+VoltageCaps                             :
+Caption                                 : ARMv8 (64-bit) Family 8 Model 0 Revision   0
+Description                             : ARMv8 (64-bit) Family 8 Model 0 Revision   0
+InstallDate                             :
+Name                                    : Apple silicon
+ConfigManagerErrorCode                  :
+ConfigManagerUserConfig                 :
+CreationClassName                       : Win32_Processor
+PNPDeviceID                             :
+PowerManagementCapabilities             :
+SystemCreationClassName                 : Win32_ComputerSystem
+SystemName                              : DESKTOP-5UHTR3O
+CurrentClockSpeed                       : 2000
+Family                                  : 2
+OtherFamilyDescription                  :
+Role                                    : CPU
+Stepping                                : 0
+UniqueId                                : XXXX
+UpgradeMethod                           : 6
+Architecture                            : 12
+AssetTag                                :
+Characteristics                         :
+L3CacheSize                             : 0
+L3CacheSpeed                            : 0
+Level                                   : 0
+Manufacturer                            : Apple
+NumberOfCores                           : 1
+NumberOfEnabledCore                     :
+NumberOfLogicalProcessors               : 1
+PartNumber                              :
+ProcessorId                             :
+SecondLevelAddressTranslationExtensions : False
+SerialNumber                            : XXXX
+ThreadCount                             :
+VirtualizationFirmwareEnabled           : False
+VMMonitorModeExtensions                 : False
+PSComputerName                          :
+CimClass                                : root/cimv2:Win32_Processor
+CimInstanceProperties                   : {Caption, Description, InstallDate, Name...}
+CimSystemProperties                     : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+
+
+AdminPasswordStatus         : 1
+BootupState                 : Normal boot
+ChassisBootupState          : 3
+KeyboardPasswordStatus      : 3
+PowerOnPasswordStatus       : 0
+PowerSupplyState            : 3
+PowerState                  : 0
+FrontPanelResetStatus       : 3
+ThermalState                : 3
+Status                      : OK
+Name                        : DESKTOP-5UHTR3O
+PowerManagementCapabilities :
+PowerManagementSupported    :
+Caption                     : DESKTOP-5UHTR3O
+Description                 : ARM processor family
+InstallDate                 :
+CreationClassName           : Win32_ComputerSystem
+NameFormat                  :
+PrimaryOwnerContact         :
+PrimaryOwnerName            : student
+Roles                       : {LM_Workstation, LM_Server, NT}
+InitialLoadInfo             :
+LastLoadInfo                :
+ResetCapability             : 1
+AutomaticManagedPagefile    : True
+AutomaticResetBootOption    : True
+AutomaticResetCapability    : True
+BootOptionOnLimit           : 3
+BootOptionOnWatchDog        : 3
+BootROMSupported            : True
+BootStatus                  : {0, 0, 0, 33...}
+ChassisSKUNumber            :
+CurrentTimeZone             : -420
+DaylightInEffect            : True
+DNSHostName                 : XXXX
+Domain                      : WORKGROUP
+DomainRole                  : 0
+EnableDaylightSavingsTime   : True
+HypervisorPresent           : True
+InfraredSupported           : False
+Manufacturer                : VMware, Inc.
+Model                       : VMware20,1
+NetworkServerModeEnabled    : True
+NumberOfLogicalProcessors   : 2
+NumberOfProcessors          : 2
+OEMLogoBitmap               :
+OEMStringArray              : {[MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7], Welcome to
+                              the Virtual Machine}
+PartOfDomain                : False
+PauseAfterReset             : 3932100000
+PCSystemType                : 1
+PCSystemTypeEx              : 1
+ResetCount                  : -1
+ResetLimit                  : -1
+SupportContactDescription   :
+SystemFamily                : VMware
+SystemSKUNumber             : 0000000000000001
+SystemStartupDelay          :
+SystemStartupOptions        :
+SystemStartupSetting        :
+SystemType                  : ARM64-based PC
+TotalPhysicalMemory         : 4289474560
+UserName                    : XXXX
+WakeUpType                  : 6
+Workgroup                   : WORKGROUP
+PSComputerName              :
+CimClass                    : root/cimv2:Win32_ComputerSystem
+CimInstanceProperties       : {Caption, Description, InstallDate, Name...}
+CimSystemProperties         : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+
+
+Caption               : Physical Memory
+Description           : Physical Memory
+InstallDate           :
+Name                  : Physical Memory
+Status                :
+CreationClassName     : Win32_PhysicalMemory
+Manufacturer          : VMware Virtual RAM
+Model                 :
+OtherIdentifyingInfo  :
+PartNumber            : VMW-4096MB
+PoweredOn             :
+SerialNumber          : XXXX
+SKU                   :
+Tag                   : Physical Memory 0
+Version               :
+HotSwappable          :
+Removable             :
+Replaceable           :
+FormFactor            : 8
+BankLabel             : RAM slot #0
+Capacity              : 4294967296
+DataWidth             : 64
+InterleavePosition    :
+MemoryType            : 2
+PositionInRow         :
+Speed                 :
+TotalWidth            : 64
+Attributes            : 0
+ConfiguredClockSpeed  : 4800
+ConfiguredVoltage     : 1200
+DeviceLocator         : RAM slot #0
+InterleaveDataDepth   :
+MaxVoltage            : 1200
+MinVoltage            : 1200
+SMBIOSMemoryType      : 3
+TypeDetail            : 128
+PSComputerName        :
+CimClass              : root/cimv2:Win32_PhysicalMemory
+CimInstanceProperties : {Caption, Description, InstallDate, Name...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+
+
+ClassName                        : MSFT_PhysicalDisk
+Usage                            : Auto-Select
+OperationalStatus                : OK
+UniqueIdFormat                   : SCSI Name String
+HealthStatus                     : Healthy
+BusType                          : NVMe
+CannotPoolReason                 : Insufficient Capacity
+SupportedUsages                  : {Auto-Select, Manual-Select, Hot Spare, Retired...}
+MediaType                        : SSD
+SpindleSpeed                     : 0
+ObjectId                         : {1}\\DESKTOP-5UHTR3O\root/Microsoft/Windows/Storage/Providers_v2\SPA
+                                   CES_PhysicalDisk.ObjectId="{40a006ed-d04c-11f1-a04c-806e6f6e6963}:PD
+                                   :{1aaf538e-c8b6-eca8-319a-b718010102ca}"
+PassThroughClass                 :
+PassThroughIds                   :
+PassThroughNamespace             :
+PassThroughServer                :
+UniqueId                         : XXXX
+Description                      :
+FriendlyName                     : VMware Virtual NVMe Disk
+Manufacturer                     :
+Model                            : VMware Virtual NVMe Disk
+OperationalDetails               :
+PhysicalLocation                 : PCI Slot 224 : Bus 17 : Device 0 : Function 0 : Adapter 1
+SerialNumber                     : XXXX
+AdapterSerialNumber              : VMware NVME_0000
+AllocatedSize                    : 68718428160
+CanPool                          : False
+DeviceId                         : 0
+EnclosureNumber                  :
+FirmwareVersion                  : 1.4
+FruId                            : VMware NVME_0000
+IsIndicationEnabled              : False
+IsPartial                        : True
+LogicalSectorSize                : 512
+OtherCannotPoolReasonDescription :
+PartNumber                       :
+PhysicalSectorSize               : 4096
+Size                             : 68719476736
+SlotNumber                       :
+SoftwareVersion                  :
+StoragePoolUniqueId              :
+VirtualDiskFootprint             : 0
+PSComputerName                   :
+CimClass                         : root/microsoft/windows/storage:MSFT_PhysicalDisk
+CimInstanceProperties            : {ObjectId, PassThroughClass, PassThroughIds,
+                                   PassThroughNamespace...}
+CimSystemProperties              : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+
+
+Status                  : OK
+Name                    : Base Board
+PoweredOn               : True
+Caption                 : Base Board
+Description             : Base Board
+InstallDate             :
+CreationClassName       : Win32_BaseBoard
+Manufacturer            : VMware, Inc.
+Model                   :
+OtherIdentifyingInfo    :
+PartNumber              :
+SerialNumber            : XXXX
+SKU                     :
+Tag                     : Base Board
+Version                 : 1
+Depth                   :
+Height                  :
+HotSwappable            : False
+Removable               : False
+Replaceable             : False
+Weight                  :
+Width                   :
+HostingBoard            : True
+RequirementsDescription :
+RequiresDaughterBoard   : False
+SlotLayout              :
+SpecialRequirements     :
+ConfigOptions           :
+Product                 : VBSA
+PSComputerName          :
+CimClass                : root/cimv2:Win32_BaseBoard
+CimInstanceProperties   : {Caption, Description, InstallDate, Name...}
+CimSystemProperties     : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20261028233429
+**********************
