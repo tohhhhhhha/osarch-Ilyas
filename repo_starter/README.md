@@ -44,4 +44,5 @@ Week __ — `____` : [tools/____.md](tools/)
 |------------|------|----------|
 | Lab 2 | Claude | explained the steps when I got stuck  |
 | Ticket 1 | Claude | gave instructions and terminal commands to fix errors, helped write BUILD.md and README.md. I built both VMs myself. All screenshots, numbers and IPs are from my own machines |
+| Lab 3 | Claude | gave instructions to collect Debian and Windows, help to found the Apple repair manual pages. All command outputs are from my own laptop and VMs |
 
