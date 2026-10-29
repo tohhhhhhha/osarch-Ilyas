@@ -84,3 +84,5 @@ NVMExpress:
    Solid State:               Yes
    Hardware AES Support:      Yes
 
+      Chipset Model: Apple M2
+      Total Number of Cores: 10
