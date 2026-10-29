@@ -74,6 +74,39 @@ All Part A facts were read on the **host** (macOS on the real laptop), not insid
 
 Evidence: [`evidence/macos-specs.txt`](evidence/macos-specs.txt). Serial numbers and UUIDs replaced with `XXXX`.
 
+### 2. Components
+
+![Exploded view of MacBook Air (M2, 2022)](evidence/manual-figures/exploded-view.png)
+
+*Figure 1. Exploded view from Apple's repair manual. The numbers are Apple's. Connections and limits come from the Procedures chapter of the same manual.*
+
+| # | What | Connects to | Limits |
+|---|---|---|---|
+| 24 | Logic board: M2 SoC, 8 GB LPDDR5 and 512 GB storage on one board; sold only whole (661-25636) | Nine flex cables, the battery flex cable and two antenna coaxial cables; heat sink (23) on top (Logic Board procedure) | Memory, storage and CPU cannot be changed separately. A new board needs a new heat sink and a new Touch ID board |
+| 23 | Heat sink: passive metal plate over the M2 chip, with thermal gel; no fan in the parts list | Clipped and screwed onto the logic board (Heat Sink procedure) | Cannot be reused once removed. No fan, so long heavy loads are limited by heat |
+| 25 | Battery in a tray (661-26150) | Battery flex cable to the logic board; disconnected right after the bottom case comes off (Bottom Case procedure) | Held by adhesive tabs; replacing it needs new adhesive and a press (Battery procedure) |
+| 28 | Display assembly, including the camera | Display and camera flex cables to the logic board; hinges screwed to the top case (Display procedure) | Sold only as a whole. A new display needs a new lid angle sensor |
+| 15 | Lid angle sensor: tells the Mac how far the lid is open | Flex cable to a connector on the audio board (Audio Board procedure) | Paired with the display; after replacement, sleep and wake may fail until Repair Assistant is run |
+| 26 | Top case: the frame everything mounts into; keyboard, keyboard backlight, microphones and interposer board are built in | Keyboard reaches the logic board through the interposer board flex cable (Top Case with Keyboard procedure) | Keyboard cannot be replaced on its own, only single keys or the whole top case |
+| 27, 22 | Trackpad and trackpad flex cable | Trackpad flex cable to the logic board under a connector cowling (Trackpad procedure) | Flex cable is held by strong adhesive; shims come only with a new trackpad |
+| 20 | MagSafe 3 board: the charging port | Its flex cable to the logic board; held in place by the wedge (19) | Charging only; if its flex cable is damaged, the whole board is replaced |
+| 21 | USB-C boards: two separate boards, one port each | Each has its own flex cable to the logic board (USB-C Boards procedure) | A broken port means a new small board, not a new logic board |
+| 17 | Audio board (headphone jack) | Audio board flex cable to the logic board; the lid angle sensor plugs into it (Audio Board procedure) | Only the jack; the speakers are separate parts (3) |
+| 18 | Touch ID board: power button with fingerprint sensor | Touch ID board flex cable to the logic board (Touch ID Board procedure) | Paired with the logic board; a new Touch ID works only as a power button until Repair Assistant is run |
+| 3 | Left and right speakers with built-in Wi-Fi/Bluetooth antennas | Speaker connectors and antenna coaxial cables to the logic board | No separate Wi-Fi card in the parts list: the radio is on the logic board, only the antennas are here |
+| 1 | Bottom case | 4 pentalobe screws and 4 internal clips to the top case (Bottom Case procedure) | No access panel: every repair starts by removing the whole cover |
+| 2, 9, 4–14, 16, 19 | Hinge covers, connector cowlings, MagSafe board wedge | Screwed over connectors and hinges | Mechanical only; no effect on upgrades |
+
+### 3. Upgrade verdict
+
+| Component | Manual says | OS says | Verdict |
+|---|---|---|---|
+| Memory | No separate memory part; the logic board (part 24) is sold in 8 / 16 / 24 GB variants (Exploded View and Orderable Parts) | `SPMemoryDataType`: 8 GB, LPDDR5, no modules or slots listed | **No:** on the logic board, fixed at purchase |
+| Storage | No separate SSD part; logic board variants include 256 GB to 2 TB (same page) | `SPNVMeDataType`: APPLE SSD AP0512Z, Detachable Drive: No; `diskutil`: Removable Media: Fixed | **No:** on the logic board, no M.2 slot |
+| CPU | "M2" is part of every logic board variant (same page) | `sysctl -n machdep.cpu.brand_string`: Apple M2 | **No:** part of the SoC; no socket |
+
+The manual and the OS agree on the verdict but not on the numbers. The parts list calls my board the "512 GB" variant, while the OS shows 500.28 GB: both are decimal gigabytes, so this is not GB vs GiB, and about 12 GB of the chips is simply not visible to the OS. For memory it is the other way round: macOS says "8 GB", but `hw.memsize` is 8 589 934 592 bytes, which is exactly 8 GiB. The disk interface also has two names, "NVMExpress" in `system_profiler` and "Apple Fabric" in `diskutil`, because the SSD controller sits inside the M2 and speaks NVMe over Apple's internal link. For the verdict I trust the manual: the OS can only list the parts it sees and cannot prove that a slot does not exist, so "no modules listed" becomes evidence only together with the parts list, where memory and storage exist only as logic board variants.
+
 ### 4. Three-OS table
 
 | Fact | macOS (host) | Debian (VM) | Windows (VM) |
