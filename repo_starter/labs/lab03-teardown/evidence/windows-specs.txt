@@ -51,7 +51,7 @@ CreationClassName                       : Win32_Processor
 PNPDeviceID                             :
 PowerManagementCapabilities             :
 SystemCreationClassName                 : Win32_ComputerSystem
-SystemName                              : DESKTOP-5UHTR3O
+SystemName                              : XXXX
 CurrentClockSpeed                       : 1997
 Family                                  : 257
 OtherFamilyDescription                  :
@@ -113,7 +113,7 @@ CreationClassName                       : Win32_Processor
 PNPDeviceID                             :
 PowerManagementCapabilities             :
 SystemCreationClassName                 : Win32_ComputerSystem
-SystemName                              : DESKTOP-5UHTR3O
+SystemName                              : XXXX
 CurrentClockSpeed                       : 2000
 Family                                  : 2
 OtherFamilyDescription                  :
@@ -157,10 +157,10 @@ PowerState                  : 0
 FrontPanelResetStatus       : 3
 ThermalState                : 3
 Status                      : OK
-Name                        : DESKTOP-5UHTR3O
+Name                        : XXXX
 PowerManagementCapabilities :
 PowerManagementSupported    :
-Caption                     : DESKTOP-5UHTR3O
+Caption                     : XXXX
 Description                 : ARM processor family
 InstallDate                 :
 CreationClassName           : Win32_ComputerSystem
@@ -276,7 +276,7 @@ CannotPoolReason                 : Insufficient Capacity
 SupportedUsages                  : {Auto-Select, Manual-Select, Hot Spare, Retired...}
 MediaType                        : SSD
 SpindleSpeed                     : 0
-ObjectId                         : {1}\\DESKTOP-5UHTR3O\root/Microsoft/Windows/Storage/Providers_v2\SPA
+ObjectId                         : {1}\\XXXX\root/Microsoft/Windows/Storage/Providers_v2\SPA
                                    CES_PhysicalDisk.ObjectId="{40a006ed-d04c-11f1-a04c-806e6f6e6963}:PD
                                    :{1aaf538e-c8b6-eca8-319a-b718010102ca}"
 PassThroughClass                 :
