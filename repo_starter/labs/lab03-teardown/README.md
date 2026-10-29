@@ -2,7 +2,7 @@
 
 Pair: worked alone                    Driver first half: —
 Machine: MacBook Air (M2, 2022), Mac14,2 (host, macOS); guests: Debian 13 arm64 and Windows 11 arm64 in VMware Fusion
-Date: 2026-10-29
+Date: 29.10.2026
 
 ## What I did
 
