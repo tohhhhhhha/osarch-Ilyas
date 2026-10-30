@@ -78,7 +78,7 @@ Evidence: [`evidence/macos-specs.txt`](evidence/macos-specs.txt). Serial numbers
 
 ![Exploded view of MacBook Air (M2, 2022)](evidence/manual-figures/exploded-view.png)
 
-*Figure 1. Exploded view from Apple's repair manual. The numbers are Apple's. Connections and limits come from the Procedures chapter of the same manual.*
+*Figure 1. Exploded view from Apple's repair manual. The numbers are Apple's. Connections and limits come from the Procedures chapter of the same manual. Apple publishes this manual as web pages without page numbers, so references name the section instead.*
 
 | # | What | Connects to | Limits |
 |---|---|---|---|
