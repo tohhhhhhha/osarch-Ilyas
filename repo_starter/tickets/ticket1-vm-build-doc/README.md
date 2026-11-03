@@ -163,7 +163,22 @@ Smaller problems, all now written as warnings in BUILD.md:
 
 ### Peer review
 
-*(Week 5: who reviewed, the first step where they got stuck, and what I changed. Link to the commit.)*
+**Reviewer:** Zhansaya Azat. She had never used a Mac before and followed
+BUILD.md on my Mac from Step 3 to the end. Fusion and the ISO files were
+already there, so Steps 1–2 were not tested. Her feedback:
+[review/feedback-from-Azat.md](review/feedback-from-Azat.md).
+
+**First step where she got stuck:** Step 12. Choosing the country and the
+time zone was new for her. The step said which country to pick, but not
+what comes after it, so she only knew it was right in Step 20, when `date`
+matched the Mac clock. She was also often afraid to press the wrong button,
+because she did not know which mistakes can be undone.
+
+**Planned changes to BUILD.md:**
+- Step 12: describe the screens after choosing Kazakhstan and what to
+  choose there (locale `en_US.UTF-8`, time zone Almaty).
+- "Before you start": add that until Step 39 you can always delete the VM
+  and start again, so a wrong click is not a disaster.
 
 ## 4. Evidence
 
