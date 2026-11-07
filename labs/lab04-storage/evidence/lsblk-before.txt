@@ -1,0 +1,12 @@
+NAME                  SIZE TYPE FSTYPE      MOUNTPOINT
+sr0                  1024M rom              
+nvme0n1                20G disk             
+├─nvme0n1p1            16M part             
+├─nvme0n1p2           952M part vfat        /boot/efi
+├─nvme0n1p3           952M part ext4        /boot
+└─nvme0n1p4          18.1G part LVM2_member 
+  ├─lab01--vg-root   17.1G lvm  ext4        /
+  └─lab01--vg-swap_1 1008M lvm  swap        [SWAP]
+nvme0n2                 2G disk             
+nvme0n3                 2G disk             
+nvme0n4                 2G disk             
