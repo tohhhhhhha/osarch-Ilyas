@@ -1,0 +1,49 @@
+role,component,model,price_kzt,source,date
+Accountant,CPU,"AMD Ryzen 5 5500GT AM4 OEM (6C/12T, Vega 7 iGPU)",79190,https://shop.kz/offer/protsessor-amd-ryzen-5-5500gt-am4-oem/,2026-11-11
+Accountant,CPU cooler,DeepCool AG400,10490,https://shop.kz/offer/kuler-deepcool-ag400/,2026-11-11
+Accountant,Motherboard,"ASUS Prime A520M-K (AM4, 2x DDR4, 1x M.2)",32790,https://shop.kz/offer/materinskaya-plata-asus-prime-a520m-k-am4/,2026-11-11
+Accountant,Memory,DDR4 16 GB (2x8) 3200 Team Group Elite TED416G3200C22DC01,76990,https://shop.kz/offer/ddr-4-dimm-16-gb-3200-mhz-team-group-elite-2x-8-gb-kit-box-ted416g3200c22dc01/,2026-11-11
+Accountant,SSD,Kingston NV3 1 TB M.2 NVMe PCIe 4.0,79400,https://shop.kz/offer/ssd-nakopitel-1-tb-kingston-nv3-m-2-pcie-4-0/,2026-11-11
+Accountant,Case,DeepCool CG380 3F Black,28990,https://shop.kz/offer/korpus-deepcool-cg380-3f-black/,2026-11-11
+Accountant,Power supply,FSP VIC-550BD 550 W 80+ Bronze,18690,https://shop.kz/offer/blok-pitaniya-atx-550-w-fsp-vic-550bd/,2026-11-11
+Accountant,Operating system,Microsoft Windows 11 Professional 64-bit USB (retail),122990,https://shop.kz/offer/microsoft-windows-11-professional-64-bit-usb/,2026-11-11
+Accountant,Monitor,"Philips 24E1N1200A 23.8in IPS 1920x1080 120 Hz, speakers",53990,https://shop.kz/offer/monitor-23-8-philips-24e1n1200a-01-black/,2026-11-11
+Accountant,Keyboard + mouse,Logitech MK270 wireless set,14290,https://shop.kz/offer/klaviatura-logitech-mk270-black-usb-mysh/,2026-11-11
+Accountant,SUBTOTAL,,517810,,2026-11-11
+Sales manager,CPU,"AMD Ryzen 5 5500GT AM4 OEM (6C/12T, Vega 7 iGPU)",79190,https://shop.kz/offer/protsessor-amd-ryzen-5-5500gt-am4-oem/,2026-11-11
+Sales manager,CPU cooler,DeepCool AG400,10490,https://shop.kz/offer/kuler-deepcool-ag400/,2026-11-11
+Sales manager,Motherboard,"ASUS Prime A520M-K (AM4, 2x DDR4, 1x M.2)",32790,https://shop.kz/offer/materinskaya-plata-asus-prime-a520m-k-am4/,2026-11-11
+Sales manager,Memory,DDR4 32 GB (2x16) 3200 GeIL Pristine GP432GB3200C22DC,139990,https://shop.kz/offer/ddr-4-dimm-32-gb-3200-mhz-geil-pristine-series-2x-16-gb-kit-box-gp432gb3200c22dc/,2026-11-11
+Sales manager,SSD,Kingston NV3 1 TB M.2 NVMe PCIe 4.0,79400,https://shop.kz/offer/ssd-nakopitel-1-tb-kingston-nv3-m-2-pcie-4-0/,2026-11-11
+Sales manager,Case,DeepCool CG380 3F Black,28990,https://shop.kz/offer/korpus-deepcool-cg380-3f-black/,2026-11-11
+Sales manager,Power supply,FSP VIC-550BD 550 W 80+ Bronze,18690,https://shop.kz/offer/blok-pitaniya-atx-550-w-fsp-vic-550bd/,2026-11-11
+Sales manager,Operating system,Microsoft Windows 11 Professional 64-bit USB (retail),122990,https://shop.kz/offer/microsoft-windows-11-professional-64-bit-usb/,2026-11-11
+Sales manager,Monitor,"Philips 24E1N1200A 23.8in IPS 1920x1080 120 Hz, speakers",53990,https://shop.kz/offer/monitor-23-8-philips-24e1n1200a-01-black/,2026-11-11
+Sales manager,Keyboard + mouse,Logitech MK270 wireless set,14290,https://shop.kz/offer/klaviatura-logitech-mk270-black-usb-mysh/,2026-11-11
+Sales manager,Webcam,HP 320 Full HD with microphone,18600,https://shop.kz/offer/web-kamera-hp-320-fullhd/,2026-11-11
+Sales manager,SUBTOTAL,,599410,,2026-11-11
+Web developer,CPU,"AMD Ryzen 7 5700G AM4 OEM (8C/16T, iGPU)",115590,https://shop.kz/offer/protsessor-amd-ryzen-7-5700g-am4-oem/,2026-11-11
+Web developer,CPU cooler,DeepCool AG400,10490,https://shop.kz/offer/kuler-deepcool-ag400/,2026-11-11
+Web developer,Motherboard,"ASUS Prime B550M-A (AM4, 4x DDR4, 2x M.2)",50990,https://shop.kz/offer/materinskaya-plata-asus-prime-b550m-a-am4/,2026-11-11
+Web developer,Memory,DDR4 32 GB (2x16) 3200 GeIL Pristine GP432GB3200C22DC,139990,https://shop.kz/offer/ddr-4-dimm-32-gb-3200-mhz-geil-pristine-series-2x-16-gb-kit-box-gp432gb3200c22dc/,2026-11-11
+Web developer,SSD,Kingston NV3 1 TB M.2 NVMe PCIe 4.0,79400,https://shop.kz/offer/ssd-nakopitel-1-tb-kingston-nv3-m-2-pcie-4-0/,2026-11-11
+Web developer,Case,DeepCool CG380 3F Black,28990,https://shop.kz/offer/korpus-deepcool-cg380-3f-black/,2026-11-11
+Web developer,Power supply,FSP VIC-550BD 550 W 80+ Bronze,18690,https://shop.kz/offer/blok-pitaniya-atx-550-w-fsp-vic-550bd/,2026-11-11
+Web developer,Operating system,Microsoft Windows 11 Professional 64-bit USB (retail),122990,https://shop.kz/offer/microsoft-windows-11-professional-64-bit-usb/,2026-11-11
+Web developer,Monitor,AOC Q27B36X 27in IPS 2560x1440 144 Hz,86990,https://shop.kz/offer/monitor-27-aoc-q27b36x-black/,2026-11-11
+Web developer,Keyboard + mouse,Logitech MK270 wireless set,14290,https://shop.kz/offer/klaviatura-logitech-mk270-black-usb-mysh/,2026-11-11
+Web developer,SUBTOTAL,,668410,,2026-11-11
+Designer,CPU,"AMD Ryzen 7 5700X AM4 OEM (8C/16T, no iGPU)",83990,https://shop.kz/offer/protsessor-amd-ryzen-7-5700x-am4-oem/,2026-11-11
+Designer,CPU cooler,DeepCool AG400,10490,https://shop.kz/offer/kuler-deepcool-ag400/,2026-11-11
+Designer,Motherboard,"ASUS Prime B550M-A (AM4, 4x DDR4, 2x M.2)",50990,https://shop.kz/offer/materinskaya-plata-asus-prime-b550m-a-am4/,2026-11-11
+Designer,Memory,DDR4 32 GB (2x16) 3200 GeIL Pristine GP432GB3200C22DC,139990,https://shop.kz/offer/ddr-4-dimm-32-gb-3200-mhz-geil-pristine-series-2x-16-gb-kit-box-gp432gb3200c22dc/,2026-11-11
+Designer,SSD,Kingston NV3 1 TB M.2 NVMe PCIe 4.0,79400,https://shop.kz/offer/ssd-nakopitel-1-tb-kingston-nv3-m-2-pcie-4-0/,2026-11-11
+Designer,Graphics card,Gigabyte RTX 5060 Aero OC 8 GB,288990,https://shop.kz/offer/videokarta-gigabyte-rtx-5060-aero-oc-8-gb-geforse-rtx-5060/,2026-11-11
+Designer,Case,DeepCool CG380 3F Black,28990,https://shop.kz/offer/korpus-deepcool-cg380-3f-black/,2026-11-11
+Designer,Power supply,FSP VIC-650BD 650 W 80+ Bronze,20990,https://shop.kz/offer/blok-pitaniya-atx-650-w-fsp-vic-650bd/,2026-11-11
+Designer,Operating system,Microsoft Windows 11 Professional 64-bit USB (retail),122990,https://shop.kz/offer/microsoft-windows-11-professional-64-bit-usb/,2026-11-11
+Designer,Monitor,"Philips 27B2U3601 27in IPS 2560x1440 125% sRGB, USB-C, height/pivot stand",191990,https://shop.kz/offer/monitor-27-philips-27b2u3601-01-black/,2026-11-11
+Designer,Keyboard + mouse,Logitech MK270 wireless set,14290,https://shop.kz/offer/klaviatura-logitech-mk270-black-usb-mysh/,2026-11-11
+Designer,SUBTOTAL,,1033100,,2026-11-11
+ALL,TOTAL,,2818730,,2026-11-11
+ALL,RESERVE (budget 3000000 - total),,181270,,2026-11-11
