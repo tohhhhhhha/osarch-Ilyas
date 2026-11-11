@@ -1,5 +1,5 @@
 # Vendor quotes
 
-**What this folder proves:** each price in `budget.csv` existed on shop.kz on the date in the date column.
+**What this folder proves:** each price in budget.csv existed on shop.kz on the date in its date column.
 
-One PDF per product page, saved from the browser (Cmd+P → Save as PDF) on the price date. The file name is the part, for example `ryzen5-5500gt.pdf`. The browser prints the date and URL in the PDF header and footer, so the date can be checked.
+One HTML file per shop.kz product page, downloaded with curl from urls.txt. fetch-log.txt records the HTTP status of each page and the time of the download.

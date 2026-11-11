@@ -1,6 +1,6 @@
 # Four builds for the second office
 
-Every price and every specification below comes from the product page of that part on **shop.kz** (Белый Ветер, delivers across Kazakhstan), read on **2026-11-11**. Prices are the "Цена в интернет-магазине", VAT included ("Цены указаны с учетом НДС"). Each line, with its link, is in [`budget.csv`](budget.csv). The pages are saved as PDF in [`evidence/vendor-quotes/`](evidence/vendor-quotes/).
+Every price and every specification below comes from the product page of that part on **shop.kz** (Белый Ветер, delivers across Kazakhstan), read on **2026-11-11**. Prices are the "Цена в интернет-магазине", VAT included ("Цены указаны с учетом НДС"). Each line, with its link, is in [`budget.csv`](budget.csv). The pages are saved in [`evidence/vendor-quotes/`](evidence/vendor-quotes/).
 
 ## What all four share, and why
 

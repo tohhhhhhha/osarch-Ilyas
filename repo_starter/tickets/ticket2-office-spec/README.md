@@ -70,7 +70,7 @@ For this office I would build the machines. A director who has nobody to assembl
 - [`builds.md`](builds.md): load, bottleneck and trade-off for each machine, and a "why this one" line for every part, taken from its product page.
 - [`evidence/price-check-2026-11-11.md`](evidence/price-check-2026-11-11.md): as text, what each product page showed on the price date (price, specs, warranty, sold-out parts).
 - [`evidence/pcpartpicker-links.md`](evidence/pcpartpicker-links.md): why PCPartPicker cannot price for Kazakhstan, the compatibility checks done against the product pages, and the links for each build.
-- [`evidence/vendor-quotes/`](evidence/vendor-quotes/): every shop.kz product page saved as PDF on the price date, as proof of the price and the date.
+- [`evidence/vendor-quotes/`](evidence/vendor-quotes/): every shop.kz product page downloaded on the price date (HTML), with fetch-log.txt recording the status and time.
 
 ## 5. What I would do differently
 

@@ -1,6 +1,6 @@
 # Price check, 2026-11-11, shop.kz product pages
 
-**What this file proves:** what the product page of each part showed on the price date, as text: price ("Цена в интернет-магазине"), the specs used in `builds.md`, and the warranty. The PDFs in `vendor-quotes/` are the matching saved pages.
+**What this file proves:** what the product page of each part showed on the price date, as text: price ("Цена в интернет-магазине"), the specs used in `builds.md`, and the warranty. The files in `vendor-quotes/` are the matching saved pages.
 
 ## Parts used
 
