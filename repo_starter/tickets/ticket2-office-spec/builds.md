@@ -1,60 +1,98 @@
 # Four builds for the second office
 
-All prices are from **shop.kz** (Белый Ветер), which sells online with delivery across Kazakhstan. Prices are online-store prices in tenge, VAT included, taken on **2026-11-11**. Every line is in [`budget.csv`](budget.csv) with its link and date.
+Every price and every specification below comes from the product page of that part on **shop.kz** (Белый Ветер, delivers across Kazakhstan), read on **2026-11-11**. Prices are the "Цена в интернет-магазине", VAT included ("Цены указаны с учетом НДС"). Each line, with its link, is in [`budget.csv`](budget.csv). The pages are saved as PDF in [`evidence/vendor-quotes/`](evidence/vendor-quotes/).
 
-## What every machine shares, and why
+## What all four share, and why
 
-The four machines are **not** identical, but they are built on one base:
+The machines are **not** identical. They share one base, so one spare part fits every desk.
 
-- **Platform: AMD AM4 with DDR4.** On the price date, 32 GB of DDR5 cost 332 990 ₸ and 32 GB of DDR4 cost 139 990 ₸ at the same shop. That is 193 000 ₸ per machine. AM5/DDR5 would be the newer platform with a longer upgrade path, but it would cost 579 000 ₸ more across the three 32 GB machines, and for these loads DDR4 is not the bottleneck. **Trade-off accepted:** AM4 is the end of its line, so in four years the upgrade options will be memory, storage and graphics, not a new CPU generation.
-- **Same case, cooler, SSD, keyboard set and Windows edition** on all four. One spare of each covers every desk, and whoever looks after them learns one layout.
-- **Windows 11 Pro, retail (USB) licence.** Pro gives BitLocker (the accountant's machine holds payroll and tax data) and Remote Desktop for support. The retail licence moves to a new machine later; the cheaper OEM DVD licence (102 990 ₸) stays tied to the first motherboard.
-- **1 TB Kingston NV3** on every machine meets the 1 TB requirement at the lowest price. It is a DRAM-less drive; see Build 4 for where that matters.
-- **OEM processors come without a cooler**, so each build has a DeepCool AG400 (10 490 ₸).
+| Part | Model | Price, ₸ | Why this one (from the product page) |
+|---|---|---|---|
+| Platform | AMD AM4 + DDR4 | — | 32 GB DDR4 (2×16) costs 146 990 ₸; 32 GB DDR5 (Kingston Fury Beast 2×16, 5200) costs 332 990 ₸. AM4 saves 186 000 ₸ per 32 GB machine, 558 000 ₸ across three. |
+| Cooler | DeepCool AG400 | 10 490 | All three CPUs are sold "OEM (без системы охлаждения!)"; the AG400 page lists AM4. |
+| SSD | Kingston NV3 1 TB | 79 400 | Meets the 1 TB requirement; TLC, PCIe 4.0, up to 6000/4000 MB/s, 320 TBW, 60-month warranty. |
+| Case | DeepCool CG380 3F | 28 990 | Takes Micro-ATX boards; 3 fans included; GPU up to 410 mm. No PSU inside, so the PSU is a separate line. |
+| Power supply | FSP VIC-550BD 550 W | 19 990 | 80 PLUS Bronze, 36-month warranty. The designer's graphics card page asks for at least 450 W, so one PSU model fits all four. |
+| Windows | Windows 11 Pro, BOX, USB | 122 990 | The page lists BitLocker device encryption, which matters for payroll and tax data. The cheaper OEM DVD (102 990 ₸) is "Продается только в комплекте с компьютером", and we are buying parts, not a computer. |
+| Keyboard + mouse | Logitech MK270 | 14 290 | Wireless keyboard and mouse in one set; one receiver per desk. |
+
+**Trade-off accepted for the platform:** AM4 is an older platform. In four years the upgrades will be memory, storage and graphics, not a newer processor.
 
 ---
 
 ### Build 1: accountant
 
-**Load:** 1C:Бухгалтерия, Excel, a browser with the ИС ЭСФ portal, the tax cabinet and online banking, NCALayer for the digital signature (ЭЦП). Single-user work, one or two heavy windows at a time.
+**Load:** 1C:Бухгалтерия, Excel, a browser with the ИС ЭСФ portal, the tax cabinet and online banking, NCALayer for the digital signature. Single user, one or two heavy windows at a time.
 
-**Bottleneck:** none of the CPU, memory or graphics is stretched. The risks are **data and power**: a 1C database open when the power drops can be corrupted, and an accounting PC is the one where losing a day of work costs the most.
+**Bottleneck:** nothing in the machine is stretched. The risk is **data and power**: a 1C database open during a power cut can be damaged.
 
-**Trade-off:** took the cheapest part that meets the requirement everywhere (Ryzen 5 5500GT with built-in graphics, A520 board, 16 GB as 2×8 for dual channel) and kept money in the reserve for a UPS for this desk. Not taken: 32 GB (+63 000 ₸), which this load would not use.
+**Trade-off:** the cheapest parts that meet the requirement, and the saving kept in the reserve for a UPS for this desk. Not taken: 32 GB (+70 000 ₸), which this load would not use.
 
-**Total:** 517 810 ₸ (`budget.csv`, rows 2–12)
+| Part | Model | Price, ₸ | Why this one |
+|---|---|---|---|
+| CPU | AMD Ryzen 5 5500GT | 79 190 | 6 cores / 12 threads, Zen 3, built-in Radeon Vega 7, so no graphics card. |
+| Motherboard | ASUS Prime A520M-K | 32 790 | Page lists Zen 3 support; HDMI and VGA outputs for the built-in graphics; 2 DDR4 slots, 1 M.2. |
+| Memory | Team Group Elite 16 GB (2×8) DDR4-3200 | 76 990 | Meets 16 GB; two modules fill both slots; 36-month warranty. |
+| Monitor | Philips 24E1N1200A 23.8″ | 53 990 | IPS 1920×1080, 120 Hz, HDMI/VGA/DisplayPort, built-in speakers, 24-month warranty. |
+| Shared parts | cooler, SSD, case, PSU, Windows, keyboard | 276 150 | See table above. |
+
+**Total:** 519 110 ₸ (`budget.csv`, rows 2–12)
 
 ### Build 2: sales manager
 
-**Load:** CRM in a browser with 30–40 tabs, Excel, WhatsApp/Telegram web, about four hours a day of video calls, often all at once.
+**Load:** CRM in a browser with 30–40 tabs, Excel, messengers, about four hours of video calls a day, often all at once.
 
-**Bottleneck:** **memory.** A browser with forty tabs plus a video call already takes 11–12 GB; add Excel and messengers and 16 GB is not enough. When memory runs out Windows starts swapping to the SSD in the middle of a customer call. The CPU is mostly idle in this role.
+**Bottleneck:** **memory.** The ticket's own example puts forty tabs plus a video call at 11–12 GB; with Excel and messengers open, 16 GB runs out and Windows starts swapping in the middle of a call. The CPU mostly idles in this role.
 
-**Trade-off:** same cheap CPU and board as the accountant, and the saving went into 32 GB (2×16) and a Full HD webcam with a microphone. The monitor has built-in speakers, so there is no separate audio. Not taken: a faster CPU, which this role would not feel.
+**Trade-off:** same CPU and board as the accountant; the saving went into 32 GB and a webcam.
 
-**Total:** 599 410 ₸ (`budget.csv`, rows 13–24)
+| Part | Model | Price, ₸ | Why this one |
+|---|---|---|---|
+| CPU | AMD Ryzen 5 5500GT | 79 190 | Same as the accountant; a faster CPU would not be felt in this role. |
+| Motherboard | ASUS Prime A520M-K | 32 790 | Same board; 2 slots are enough for 2×16 GB (page: up to 64 GB). |
+| Memory | GeIL Pristine 32 GB (2×16) DDR4-3200 | 146 990 | Removes the memory bottleneck. |
+| Monitor | Philips 24E1N1200A 23.8″ | 53 990 | Built-in speakers serve the calls; no separate speakers needed. |
+| Webcam | HP 320 Full HD | 18 600 | 1920×1080 with a built-in microphone; the monitor page lists no camera. |
+| Shared parts | cooler, SSD, case, PSU, Windows, keyboard | 276 150 | See table above. |
+
+**Total:** 607 710 ₸ (`budget.csv`, rows 13–24)
 
 ### Build 3: web developer
 
-**Load:** VS Code, Docker (several containers: database, backend, frontend dev server) through WSL2, `npm` builds, two or three browsers open for testing.
+**Load:** VS Code, Docker with several containers (database, backend, frontend) through WSL2, `npm` builds, two or three browsers open for testing.
 
-**Bottleneck:** **memory first, then CPU threads.** WSL2 and Docker hold on to a large share of memory while they run, and builds use every core. Graphics do not matter.
+**Bottleneck:** **memory first, then CPU threads.** Containers and browsers all sit in memory at once, and builds use every core. Graphics do not matter.
 
-**Trade-off:** 8-core Ryzen 7 5700G (it has built-in graphics, so no graphics card) and 32 GB. The B550 board costs 18 200 ₸ more than the A520, but it has **four** memory slots and two M.2 slots, so this machine can go to 64 GB later without throwing anything away. The 27″ 1440p monitor (86 990 ₸) shows two files side by side. Not taken: a graphics card, and Linux instead of Windows (it would save the 122 990 ₸ licence, but the developer has to test sites in Windows browsers, and nobody in a small office supports a Linux desktop).
+**Trade-off:** an 8-core CPU with built-in graphics (no graphics card), and a board with room to grow. Not taken: Linux instead of Windows (it would save 122 990 ₸, but the developer must test sites in Windows browsers, and nobody in a small office supports a Linux desktop).
 
-**Total:** 668 410 ₸ (`budget.csv`, rows 25–35)
+| Part | Model | Price, ₸ | Why this one |
+|---|---|---|---|
+| CPU | AMD Ryzen 7 5700G | 115 590 | 8 cores / 16 threads, Zen 3, built-in Radeon Graphics, so no graphics card. |
+| Motherboard | ASUS Prime B550M-A | 50 990 | **4** DDR4 slots (up to 128 GB) and 2 M.2: memory can be doubled later without throwing anything away. 18 200 ₸ more than the A520. |
+| Memory | GeIL Pristine 32 GB (2×16) DDR4-3200 | 146 990 | Uses two of the four slots. |
+| Monitor | AOC Q27B36X 27″ | 86 990 | IPS 2560×1440: two files side by side; HDMI cable included. |
+| Shared parts | cooler, SSD, case, PSU, Windows, keyboard | 276 150 | See table above. |
+
+**Total:** 676 710 ₸ (`budget.csv`, rows 25–35)
 
 ### Build 4: designer
 
-**Load:** assumed to be graphic and web design: Photoshop, Illustrator and Figma, with short video edits for social media (see README §2, the request does not say).
+**Load:** assumed graphic and web design (Photoshop, Illustrator, Figma) with short video edits for social media. The request does not say; see README §2.
 
-**Bottleneck:** **the graphics card and the screen.** Photoshop and video editing use the GPU for filters, previews and export. A screen that shows colour wrongly makes all the work wrong, however fast the PC is.
+**Bottleneck:** **the graphics card and the screen.** Photoshop and video editing use the graphics card for previews and export, and a screen that shows colour wrongly makes every file wrong.
 
-**Trade-off:** spent the money where it shows: an RTX 5060 8 GB (288 990 ₸) and a 27″ 1440p IPS monitor with 125 % sRGB coverage, USB-C and a height/pivot stand (191 990 ₸). To pay for that: Ryzen 7 5700X on AM4 with DDR4 instead of AM5 with DDR5, and the 8 GB card instead of the 16 GB RTX 5060 Ti (~470 000 ₸). Rejected cheaper option: an RTX 3050 6 GB (161 690 ₸) saves 127 300 ₸ but is weak for video, and buying it means replacing it inside two years. The 650 W power supply leaves headroom for the card.
+**Trade-off:** the money went to the graphics card and the monitor. To pay for that, the CPU is the 5700X without built-in graphics, the platform stays AM4/DDR4, and the card is the 8 GB RTX 5060, not the 16 GB RTX 5060 Ti (452 990 ₸, +163 000 ₸). Rejected cheaper option: Palit RTX 3050 6 GB (166 990 ₸) saves 123 000 ₸, but it has less and older video memory (6 GB GDDR6 against 8 GB GDDR7).
 
-**Known weak point:** the same DRAM-less 1 TB NV3 as the others. Fine for opening files; slow for copying or exporting tens of gigabytes at once (see README, question 3).
+| Part | Model | Price, ₸ | Why this one |
+|---|---|---|---|
+| CPU | AMD Ryzen 7 5700X | 83 990 | 8 cores / 16 threads, Zen 3; no built-in graphics, which is fine because the card does the display. 31 600 ₸ cheaper than the 5700G. |
+| Motherboard | ASUS Prime B550M-A | 50 990 | 4 memory slots; the page warns its video outputs do not work without built-in graphics, so the monitor plugs into the card. |
+| Memory | GeIL Pristine 32 GB (2×16) DDR4-3200 | 146 990 | Two Adobe programs and a browser at once. |
+| Graphics card | Gigabyte RTX 5060 OC Low Profile | 289 990 | 8 GB GDDR7; minimum PSU 450 W, so the shared 550 W PSU is enough. The Gigabyte Aero and ASUS TUF versions were sold out. |
+| Monitor | Philips 27B2U3601 27″ | 191 990 | IPS 2560×1440, 125 % sRGB, USB-C, height adjustment and 90° pivot for portrait layouts. |
+| Shared parts | cooler, SSD, case, PSU, Windows, keyboard | 276 150 | See table above. |
 
-**Total:** 1 033 100 ₸ (`budget.csv`, rows 36–47)
+**Total:** 1 040 100 ₸ (`budget.csv`, rows 36–47)
 
 ---
 
@@ -62,13 +100,13 @@ The four machines are **not** identical, but they are built on one base:
 
 | Build | Total, ₸ |
 |---|---|
-| Accountant | 517 810 |
-| Sales manager | 599 410 |
-| Web developer | 668 410 |
-| Designer | 1 033 100 |
-| **All four** | **2 818 730** |
-| Reserve within 3 000 000 | 181 270 (6 %) |
+| Accountant | 519 110 |
+| Sales manager | 607 710 |
+| Web developer | 676 710 |
+| Designer | 1 040 100 |
+| **All four** | **2 843 630** |
+| Reserve within 3 000 000 | 156 370 (5 %) |
 
-The reserve is deliberate: memory prices moved during the week of this research (the Ryzen 7 5700X showed 92 990 ₸ on the catalogue page and 83 990 ₸ on its product page on the same day), and the accountant's UPS and delivery come out of it.
+The reserve is deliberate. Prices on shop.kz moved within one day: the catalogue page showed the 32 GB DDR4 kit at 139 990 ₸ and its product page at 146 990 ₸. The accountant's UPS and delivery also come out of the reserve.
 
-**Why not four identical machines:** four copies of the designer build cost 4 132 400 ₸, which is 1.13 million over budget. Four copies of the accountant build (2 071 240 ₸) fit, but then the designer has no graphics card and the developer and sales manager run out of memory. Identical machines are either unaffordable or wrong for three of the four people.
+**Why not four identical machines:** four copies of the designer build cost **4 160 400 ₸**, 1.16 million over budget. Four copies of the accountant build (2 076 440 ₸) fit, but then the designer has no graphics card and the developer and sales manager run out of memory.
