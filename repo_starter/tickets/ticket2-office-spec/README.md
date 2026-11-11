@@ -24,13 +24,7 @@
 
 ## 3. What I did
 
-1. Wrote down each person's daily load and named the one part that load runs out of first (the bottleneck). The reasoning, with a "why this one" line for every part, is in [`builds.md`](builds.md).
-2. Took every price and specification from the **product page** of the part on **shop.kz**, on **2026-11-11**. shop.kz delivers across Kazakhstan. One vendor keeps prices comparable and means one order and one invoice.
-3. Dropped anything the product page showed as sold out ("Увы, этот товар закончился"): Ryzen 5 7600, 8600G, Intel i5-12400, the Gigabyte RTX 5060 Aero and ASUS RTX 5060 TUF, the ASUS ProArt monitor, and others.
-4. Found that memory decides the platform: on the same site 32 GB DDR5 was 332 990 ₸ and 32 GB DDR4 was 146 990 ₸. I chose AM4 with DDR4 for all four machines.
-5. Put every part into [`budget.csv`](budget.csv) with its model, price, link and date, and checked the totals with a script.
-6. Priced the same four as pre-built machines from the same shop (question 2 below).
-7. Checked each build against the hard requirements: ≥16 GB memory, 1 TB SSD, licensed OS, monitor. All four pass.
+I described the daily load of each person and the part that load runs out of first, then chose parts on shop.kz (product-page prices, 2026-11-11) that remove that bottleneck within the budget. The reasoning for every part is in [builds.md](builds.md); every price, link and date is in [budget.csv](budget.csv). All four machines meet the hard requirements: at least 16 GB of memory, a 1 TB SSD, licensed Windows 11 Pro and a monitor.
 
 **Result:** 2 843 630 ₸ for four complete workstations, with 156 370 ₸ (5 %) left in reserve.
 
