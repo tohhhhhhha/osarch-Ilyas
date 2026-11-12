@@ -2,7 +2,7 @@
 
 Pair: solo    Driver first half: myself
 Machine: MacBook M2, macOS (host); Debian GNU/Linux forky/sid arm64 guest and Windows 11 ARM guest in VMware Fusion
-Date: 2026-11-12
+Date: 12.11.2026
 
 Diagnosis and conversion were done in the Linux guest (Debian GNU/Linux forky/sid, arm64), over SSH
 from the macOS host. Every "before" file was made from the untouched original before anything was converted.
