@@ -1,5 +1,9 @@
 # Lab 5 — Encoding forensics
 
+Pair: solo    Driver first half: —
+Machine: MacBook M2, macOS (host); Debian GNU/Linux forky/sid arm64 guest and Windows 11 ARM guest in VMware Fusion
+Date: 2026-11-12
+
 Diagnosis and conversion were done in the Linux guest (Debian GNU/Linux forky/sid, arm64), over SSH
 from the macOS host. Every "before" file was made from the untouched original before anything was converted.
 
@@ -8,7 +12,9 @@ SHA-256 of `evidence/staff-broken.csv`:
 the same on the host right after downloading it from Canvas, in the guest before the diagnosis,
 and in the guest after the fix. The original was never changed.
 
-## Diagnosis (before the fix)
+## What I did
+
+### 1. Diagnosis (before the fix)
 
 **file says** (`evidence/file-before.txt`):
 
@@ -76,7 +82,7 @@ Kazakh letters present (Ә, Ғ, Қ, Ң, Ө, Ұ, Ү, Һ, І — e.g. Өтебае
     $ tr -cd '\r' < staff-broken.csv | wc -c   # 26 CR bytes
     $ wc -l staff-broken.csv                   # 26 LF bytes
 
-### Result
+#### Diagnosis summary
 
 - **Encoding: RK1048** (KZ-1048, the Windows Kazakh code page) — evidence: not valid UTF-8; one byte per
   Cyrillic letter; only RK1048 decodes the whole file and shows every Kazakh letter correctly (tables above).
@@ -85,7 +91,7 @@ Kazakh letters present (Ә, Ғ, Қ, Ң, Ө, Ұ, Ү, Һ, І — e.g. Өтебае
 - **BOM: absent** — evidence: the file starts with `D2`, not `EF BB BF` or `FF FE`.
 - Separator: semicolon (`3B`).
 
-## What each application was doing wrong
+### 2. What each application was doing wrong
 
 - **Excel (Microsoft Excel for Mac 16.115):** there is no BOM and nothing in the file says RK1048, so Excel decoded every byte as **Mac Roman**, the classic Mac default code page: `D2`→`“`, `E0`→`‡`, `E1`→`·`, `B9`→`π` — «Таб.№» became `“‡·.π`. The ASCII parts (numbers, `E-mail`, addresses, dates) were intact and the columns were split on `;`.
 - **Numbers 14.5** (used instead of LibreOffice Calc, see *Deviations*): guessed a Cyrillic code page and read the file as **Windows-1251**. All Russian text was right, but the Kazakh letters, which Windows-1251 does not have, came out as other letters: «Ќасымова Јлия Серікќызы», «Нўрланов Єалымжан», «Ћашимов» — exactly what `iconv -f CP1251` showed.
@@ -100,7 +106,7 @@ What `cat staff-broken.csv | head -3` printed:
 The ASCII parts (`E-mail`, the addresses, the dates) are perfect — the bytes are intact, only the decoder
 is wrong. A corrupted file would have broken those too.
 
-## BOM decision
+### 3. BOM decision
 
 | Reader | Without BOM | With BOM |
 |---|---|---|
@@ -112,7 +118,7 @@ is wrong. A corrupted file would have broken those too.
 The fixed file has one UTF-8 BOM. Excel decided it: on a double-click it only recognises UTF-8 when the
 BOM is there. The cost is that scripts must strip it (Python: `encoding="utf-8-sig"`).
 
-## Fix
+### 4. Fix
 
 Script: `scripts/fix.sh`, run from this folder with `bash scripts/fix.sh`.
 
@@ -125,7 +131,7 @@ Changed:
 The file grew from 2460 to 3621 bytes: every Cyrillic letter now takes two bytes instead of one, `№` takes
 three, the BOM adds three, and the 26 CR bytes are gone.
 
-## Verification
+### 5. Verification
 
 **file after** (`evidence/file-after.txt`) — no "CRLF" any more:
 
@@ -154,6 +160,42 @@ character; after the fix it sits right after the value.
 - `cat` on Debian GNU/Linux forky/sid — all 25 names correct;
 - Numbers 14.5 on macOS — opened as is, all 25 names correct;
 - Microsoft Excel for Mac 16.115 — opened directly, not through the import wizard: all names correct, columns split, and no stray character before `Таб.№` (Excel recognised the BOM and hid it).
+
+## Result
+
+- Source file: **RK1048** (KZ-1048), **CRLF** line endings, **no BOM**, `;` separator.
+- Fixed file `evidence/staff-fixed.csv`: **UTF-8 with BOM, LF** line endings. The original is untouched (same SHA-256).
+- The fixed file opens correctly, with every Kazakh letter, in `cat` on Debian, Microsoft Excel for Mac 16.115
+  and Numbers 14.5 — `evidence/opens-correctly.png`.
+
+## What did not work the first time
+
+1. **Locale warning over SSH.** When I connected to the Debian guest over SSH from the Mac, every command printed
+   `-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory`.
+   It turned out macOS sends `LC_CTYPE=UTF-8`, which is not a locale name on Linux, so the shell fell back to the
+   C locale — and in this lab the terminal really has to be UTF-8. I fixed it with:
+
+        export LC_ALL=C.UTF-8
+        echo 'export LC_ALL=C.UTF-8' >> ~/.bashrc
+        locale | head -3        # LC_CTYPE="C.UTF-8"
+
+2. **SSH was not running.** After `sudo apt install openssh-server` I could not connect, and the installer had
+   printed `ssh.socket is a disabled or a static unit not running, not starting it`. I started it with:
+
+        sudo systemctl enable --now ssh
+        systemctl is-active ssh     # active
+
+3. Excel and LibreOffice were not available in the Windows guest — see *Deviations from the brief*.
+
+## Evidence
+
+- [evidence/staff-broken.csv](evidence/staff-broken.csv) — the untouched original from Canvas (SHA-256 `919027f1…cab270`)
+- [evidence/hexdump-before.txt](evidence/hexdump-before.txt) — first 16 bytes before the fix: no BOM, one byte per Cyrillic letter, `;` separator
+- [evidence/file-before.txt](evidence/file-before.txt) — `file` before the fix: Non-ISO extended-ASCII text, CRLF
+- [evidence/staff-fixed.csv](evidence/staff-fixed.csv) — the converted file
+- [evidence/file-after.txt](evidence/file-after.txt) — `file` after the fix: UTF-8 (with BOM), no CRLF
+- [evidence/opens-correctly.png](evidence/opens-correctly.png) — the fixed file in Excel for Mac, Numbers and `cat` side by side
+- [scripts/fix.sh](scripts/fix.sh) — the conversion
 
 ## Deviations from the brief
 
