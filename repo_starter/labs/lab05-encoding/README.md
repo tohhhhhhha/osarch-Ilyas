@@ -185,16 +185,16 @@ character; after the fix it sits right after the value.
         sudo systemctl enable --now ssh
         systemctl is-active ssh     # active
 
-3. Excel and LibreOffice were not available in the Windows guest — see *Deviations from the brief*.
+3. Excel and LibreOffice were not available in the Windows guest - see *Deviations from the brief*.
 
 ## Evidence
 
-- [evidence/staff-broken.csv](evidence/staff-broken.csv) — the untouched original from Canvas (SHA-256 `919027f1…cab270`)
-- [evidence/hexdump-before.txt](evidence/hexdump-before.txt) — first 16 bytes before the fix: no BOM, one byte per Cyrillic letter, `;` separator
-- [evidence/file-before.txt](evidence/file-before.txt) — `file` before the fix: Non-ISO extended-ASCII text, CRLF
-- [evidence/staff-fixed.csv](evidence/staff-fixed.csv) — the converted file
-- [evidence/file-after.txt](evidence/file-after.txt) — `file` after the fix: UTF-8 (with BOM), no CRLF
-- [evidence/opens-correctly.png](evidence/opens-correctly.png) — the fixed file in Excel for Mac, Numbers and `cat` side by side
+- [evidence/staff-broken.csv](evidence/staff-broken.csv) - the untouched original from Canvas (SHA-256 `919027f1…cab270`)
+- [evidence/hexdump-before.txt](evidence/hexdump-before.txt) - first 16 bytes before the fix: no BOM, one byte per Cyrillic letter, `;` separator
+- [evidence/file-before.txt](evidence/file-before.txt) - `file` before the fix: Non-ISO extended-ASCII text, CRLF
+- [evidence/staff-fixed.csv](evidence/staff-fixed.csv) - the converted file
+- [evidence/file-after.txt](evidence/file-after.txt) - `file` after the fix: UTF-8 (with BOM), no CRLF
+- [evidence/opens-correctly.png](evidence/opens-correctly.png) - the fixed file in Excel for Mac, Numbers and `cat` side by side
 - [scripts/fix.sh](scripts/fix.sh) — the conversion
 
 ## Deviations from the brief
@@ -210,5 +210,5 @@ character; after the fix it sits right after the value.
 
 ## AI declaration
 
-I used Claude to understand what I need to do if the Excel and  LibreOffice does not works on my Windows VM. I ran every command myself, and every result in this README comes from my own
+I used Claude to understand what I need to do if the Excel and LibreOffice do not work on my Windows VM. I ran every command myself, and every result in this README comes from my own
 files and screenshots.
