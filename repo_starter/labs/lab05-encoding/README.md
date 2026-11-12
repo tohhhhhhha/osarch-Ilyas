@@ -1,6 +1,6 @@
 # Lab 5 — Encoding forensics
 
-Pair: solo    Driver first half: —
+Pair: solo    Driver first half: myself
 Machine: MacBook M2, macOS (host); Debian GNU/Linux forky/sid arm64 guest and Windows 11 ARM guest in VMware Fusion
 Date: 2026-11-12
 
