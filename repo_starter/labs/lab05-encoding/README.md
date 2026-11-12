@@ -210,5 +210,5 @@ character; after the fix it sits right after the value.
 
 ## AI declaration
 
-I used Claude to understand what I need to do if the Excel is downloading very slow. I ran every command myself, and every result in this README comes from my own
+I used Claude to understand what I need to do if the Excel and  LibreOffice does not works on my Windows VM. I ran every command myself, and every result in this README comes from my own
 files and screenshots.
