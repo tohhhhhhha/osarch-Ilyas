@@ -1,77 +1,34 @@
-$ system_profiler SPHardwareDataType SPStorageDataType SPDisplaysDataType
-Hardware:
-
-    Hardware Overview:
-
-      Model Name: MacBook Air
-      Model Identifier: Mac14,2
-      Model Number: MLY23LL/A
-      Chip: Apple M2
-      Total Number of Cores: 8 (4 Performance and 4 Efficiency)
-      Memory: 8 GB
-      System Firmware Version: 18000.121.3
-      OS Loader Version: 18000.121.3
-      Activation Lock Status: Enabled
-
-Storage:
-
-    Data:
-
-      Free: 99,5 GB (99 500 208 128 bytes)
-      Capacity: 494,38 GB (494 384 795 648 bytes)
-      Mount Point: /System/Volumes/Data
-      File System: APFS
-      Writable: Yes
-      Ignore Ownership: No
-      BSD Name: disk3s5
-      Physical Drive:
-          Device Name: APPLE SSD AP0512Z
-          Media Name: AppleAPFSMedia
-          Medium Type: SSD
-          Protocol: Apple Fabric
-          Internal: Yes
-          Partition Map Type: Unknown
-          S.M.A.R.T. Status: Verified
-
-    Macintosh HD:
-
-      Free: 99,5 GB (99 500 208 128 bytes)
-      Capacity: 494,38 GB (494 384 795 648 bytes)
-      Mount Point: /
-      File System: APFS
-      Writable: No
-      Ignore Ownership: No
-      BSD Name: disk3s1s1
-      Physical Drive:
-          Device Name: APPLE SSD AP0512Z
-          Media Name: AppleAPFSMedia
-          Medium Type: SSD
-          Protocol: Apple Fabric
-          Internal: Yes
-          Partition Map Type: Unknown
-          S.M.A.R.T. Status: Verified
-
-Graphics/Displays:
-
-    Apple M2:
-
-      Chipset Model: Apple M2
-      Type: GPU
-      Bus: Built-In
-      Total Number of Cores: 10
-      Vendor: Apple (0x106b)
-      Metal Support: Metal 4
-      Displays:
-        Color LCD:
-          Display Type: Built-in Liquid Retina Display
-          Resolution: 2560 x 1664 Retina
-          Main Display: Yes
-          Mirror: Off
-          Online: Yes
-          Automatically Adjust Brightness: No
-          Connection Type: Internal
-
-
-$ sysctl -n machdep.cpu.brand_string && sysctl -n hw.memsize
+$ sysctl -n machdep.cpu.brand_string
 Apple M2
+
+$ sysctl hw.physicalcpu hw.logicalcpu
+hw.physicalcpu: 8
+hw.logicalcpu: 8
+
+$ sysctl kern.hv_support
+kern.hv_support: 1
+
+$ sysctl -n hw.memsize
 8589934592
+
+$ memory_pressure
+The system has 8589934592 (524288 pages with a page size of 16384).
+
+Stats: 
+Pages free: 1810 
+Pages purgeable: 0 
+Pages purged: 296993036 
+
+Swap I/O:
+Swapins: 27409003 
+Swapouts: 30975531 
+
+Page Q counts:
+Pages active: 83622 
+Pages inactive: 81942 
+Pages speculative: 914 
+Pages throttled: 0 
+Pages wired down: 124076 
+
+Compressor Stats:
+Pages used by compressor: 194937 
