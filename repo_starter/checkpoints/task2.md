@@ -16,13 +16,12 @@ Important constraint: the M2 is ARM64. Both guests must be ARM64 builds: **Ubunt
 | Other | Headless, no GUI | EFI + Secure Boot, TPM 2.0 enabled |
 
 ## Arithmetic
-
-Host assumption: macOS with Terminal, VirtualBox and a light browser needs about 3 GB RAM and at least 2 cores to stay responsive, plus ~10 GB free disk for swap and updates (with 8 GB RAM, macOS swaps to disk under pressure).
+Host assumption: macOS with Terminal, VirtualBox and a light browser needs about 3 GB RAM and at least 2 cores to stay responsive, plus arround 10 GB free disk for swap and updates (with 8 GB RAM, macOS swaps to disk under pressure)
 
 | Resource | Host has | Ubuntu | Windows | Left for host | Enough? |
 |---|---|---|---|---|---|
 | CPU | 8 cores | 2 | 2 | 8 − 2 − 2 = **4 cores** | Yes |
-| Memory | 8 GB | 1 GB | 4 GB | 8 − 1 − 4 = **3 GB** (minus ~0.3 GB VirtualBox overhead) | Barely |
+| Memory | 8 GB | 1 GB | 4 GB | 8 − 1 − 4 = **3 GB** | Barely |
 | Disk (worst case, both disks full) | 100 GB free | 20 GB | 64 GB | 100 − 20 − 64 = **16 GB** | Yes |
 | Disk (right after install) | 100 GB free | ~4 GB | ~22 GB | 100 − 4 − 22 ≈ **74 GB** | Yes |
 
@@ -42,9 +41,9 @@ Host assumption: macOS with Terminal, VirtualBox and a light browser needs about
   - Host-only alone gives SSH but no internet.
   - NAT + host-only (two adapters) would also satisfy the task, but it adds a second adapter for no gain here.
   - Binding the forward to 127.0.0.1 means only this Mac can reach the guest's SSH.
-- **Windows network: NAT only:** Windows needs internet but nothing has to connect into it, so no port forward is needed.
+- **Windows network: NAT only:** Windows needs internet but nothing has to connect into it, so no port forward is needed
 
-**What this plan gives up:** macOS has little free memory while both guests run; Ubuntu has half the RAM it had in my lab; Windows runs at its minimum and will feel slow. If memory pressure goes red, the fallback is to run the two guests one at a time.
+**What this plan gives up:** macOS has little free memory while both guests run. Ubuntu has half the RAM it had in my lab. Windows runs at its minimum and will feel slow. If memory pressure goes red, the fallback is to run the two guests one at a time
 
 ## Verification plan
 
