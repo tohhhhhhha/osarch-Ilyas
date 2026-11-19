@@ -1,12 +1,12 @@
-# Task 3 — Diagnose: nightly-report.log not written
+# Task 3
 
-Ticket: `/var/log/nightly-report.log` has not been written since the script was updated last week; the scheduler says the job runs every two minutes.
+Ticket: `/var/log/nightly-report.log` has not been written since the script was updated last week; the scheduler says the job runs every two minutes
 
 ## Transcript
 
 | # | Evidence file (command) | What I expected | What I found | What I concluded |
 |---|-------------------------|-----------------|--------------|------------------|
-| 1 | 05 (`systemctl --failed`) | nightly-report failing | Two units failed: `legacy-sync.service` and `nightly-report.service` | Two leads. Check which one is related to the ticket. |
+| 1 | 05 (`systemctl --failed`) | nightly-report failing | Two units failed: `legacy-sync.service` and `nightly-report.service` | Two leads. Check which one is related to the ticket |
 | 2 | 10 (`systemctl status legacy-sync.service`) | A reason it is failing | Description says "old office, no longer used"; `ExecStart=/bin/false`, exit status 1; failed since Nov 09 09:51:22, 6 days ago | Dead end. It fails by design (`/bin/false`) and has nothing to do with the report. Not touching it. |
 | 3 | 11 (`journalctl -u legacy-sync.service`) | Whether it started failing only recently | Same failure on Sep 14, Oct 02, Oct 19, Nov 09: once per boot, always status=1 | Dead end confirmed. Long-standing, unrelated to "last week's script update". |
 | 4 | 06 (`systemctl list-timers`) | The timer exists and fires | `nightly-report.timer` is active, last fired 09:42:01, next 09:44:01, activates `nightly-report.service` | The scheduler works as the accountant said. The fault is in what the timer starts, not in the timer. |
