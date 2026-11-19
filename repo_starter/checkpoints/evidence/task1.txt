@@ -1,0 +1,74 @@
+$ sysctl -n machdep.cpu.brand_string
+Apple M2
+
+$ sysctl hw.physicalcpu hw.logicalcpu
+hw.physicalcpu: 8
+hw.logicalcpu: 8
+
+$ sysctl kern.hv_support
+kern.hv_support: 1
+
+$ sysctl -n hw.memsize
+8589934592
+
+$ memory_pressure | tail -n 1
+System-wide memory free percentage: 37%
+
+$ df -H /
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1    494G     13G    100G    12%    459k  974M    0%   /
+
+$ system_profiler SPStorageDataType
+Storage:
+
+    Data:
+
+      Free: 99,77 GB (99 774 857 216 bytes)
+      Capacity: 494,38 GB (494 384 795 648 bytes)
+      Mount Point: /System/Volumes/Data
+      File System: APFS
+      Writable: Yes
+      Ignore Ownership: No
+      BSD Name: disk3s5
+      Volume UUID: D8FA2269-B752-4F0A-B92B-9CFAD7420131
+      Physical Drive:
+          Device Name: APPLE SSD AP0512Z
+          Media Name: AppleAPFSMedia
+          Medium Type: SSD
+          Protocol: Apple Fabric
+          Internal: Yes
+          Partition Map Type: Unknown
+          S.M.A.R.T. Status: Verified
+
+    Macintosh HD:
+
+      Free: 99,77 GB (99 774 857 216 bytes)
+      Capacity: 494,38 GB (494 384 795 648 bytes)
+      Mount Point: /
+      File System: APFS
+      Writable: No
+      Ignore Ownership: No
+      BSD Name: disk3s1s1
+      Volume UUID: 8A25D5F2-D2AF-445A-889C-F42261180603
+      Physical Drive:
+          Device Name: APPLE SSD AP0512Z
+          Media Name: AppleAPFSMedia
+          Medium Type: SSD
+          Protocol: Apple Fabric
+          Internal: Yes
+          Partition Map Type: Unknown
+          S.M.A.R.T. Status: Verified
+
+
+$ diskutil list disk0
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *500.3 GB   disk0
+   1:             Apple_APFS_ISC Container disk1         524.3 MB   disk0s1
+   2:                 Apple_APFS Container disk3         494.4 GB   disk0s2
+   3:        Apple_APFS_Recovery Container disk2         5.4 GB     disk0s3
+
+$ sw_vers
+ProductName:		macOS
+ProductVersion:		26.5.2
+BuildVersion:		25F84
