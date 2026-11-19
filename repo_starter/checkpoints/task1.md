@@ -9,5 +9,3 @@
 | System disk: size, free space, SSD or HDD | 494G total, 100G free, SSD (APPLE SSD AP0512Z) | `df -H /`, `system_profiler SPStorageDataType` |
 | Partition style of the system disk | GUID_partition_scheme (GPT), APFS container inside | `diskutil list disk0` |
 | OS and version | macOS 26.5.2 (build 25F84) | `sw_vers` |
-
-Raw command output: [evidence/task1.txt](evidence/task1.txt)
