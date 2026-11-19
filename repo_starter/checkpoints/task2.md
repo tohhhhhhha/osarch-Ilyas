@@ -1,8 +1,8 @@
 # Task 2: Plan and justify
 
-Host (from Task 1): MacBook Air M2, 8 cores (4 performance + 4 efficiency, no SMT), 8 GB unified memory (~3.0 GB available with my apps open), 494 GB SSD with ~100 GB free, macOS 26.5.2. Hypervisor: VirtualBox 7.1+ (Apple Silicon build).
+Host: MacBook Air M2, 8 cores (4 performance + 4 efficiency, no SMT), 8 GB unified memory (~3.0 GB available with my apps open), 494 GB SSD with ~100 GB free, macOS 26.5.2. Hypervisor: VirtualBox 7.1+ (Apple Silicon build)
 
-Important constraint: the M2 is ARM64. Both guests must be ARM64 builds: **Ubuntu Server ARM64** and **Windows 11 ARM64**. An x86 Windows 11 ISO will not boot on this host.
+Important constraint: the M2 is ARM64. Both guests must be ARM64 builds: **Ubuntu Server ARM64** and **Windows 11 ARM64**. An x86 Windows 11 ISO will not boot on this host
 
 ## Allocation
 
