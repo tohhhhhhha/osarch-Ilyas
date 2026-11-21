@@ -202,8 +202,3 @@ The Windows guest clock is on US Pacific time: 11:51 there is 00:51 in Almaty, t
 - [evidence/kernel-log-extract.txt](evidence/kernel-log-extract.txt) — the kernel's OOM records from `journalctl -k` and `dmesg -T`; `systemd-oomd` inactive
 - [evidence/windows-event-log.txt](evidence/windows-event-log.txt) — the Windows record: Resource-Exhaustion Resolver events, and the unrelated System event 2004
 
-## AI declaration
-
-I used Claude (Anthropic) as a step-by-step guide during this lab: it told me which commands to run and explained
-what their output meant. I ran every command myself, and every figure in this README comes from my own terminals,
-screenshots and evidence files. The README text was drafted by Claude from my results, and I checked it.
