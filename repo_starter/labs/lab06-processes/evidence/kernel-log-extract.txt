@@ -1,0 +1,14 @@
+=== journalctl -k (kernel messages about OOM)
+Nov 22 00:43:41 lab01 kernel: bash invoked oom-killer: gfp_mask=0x440dc0(GFP_KERNEL_ACCOUNT|__GFP_ZERO|__GFP_COMP), order=0, oom_score_adj=0
+Nov 22 00:43:41 lab01 kernel: Out of memory: Killed process 1509 (python3) total-vm:2754508kB, anon-rss:1710240kB, file-rss:12kB, shmem-rss:0kB, UID:1000 pgtables:5424kB oom_score_adj:0
+Nov 22 00:46:56 lab01 kernel: python3 invoked oom-killer: gfp_mask=0x440dc0(GFP_KERNEL_ACCOUNT|__GFP_ZERO|__GFP_COMP), order=0, oom_score_adj=0
+Nov 22 00:46:56 lab01 kernel: Out of memory: Killed process 1958 (python3) total-vm:2948572kB, anon-rss:1809804kB, file-rss:12kB, shmem-rss:0kB, UID:1000 pgtables:5620kB oom_score_adj:0
+
+=== dmesg -T
+[Sun Nov 22 00:43:41 2026] bash invoked oom-killer: gfp_mask=0x440dc0(GFP_KERNEL_ACCOUNT|__GFP_ZERO|__GFP_COMP), order=0, oom_score_adj=0
+[Sun Nov 22 00:43:41 2026] Out of memory: Killed process 1509 (python3) total-vm:2754508kB, anon-rss:1710240kB, file-rss:12kB, shmem-rss:0kB, UID:1000 pgtables:5424kB oom_score_adj:0
+[Sun Nov 22 00:46:56 2026] python3 invoked oom-killer: gfp_mask=0x440dc0(GFP_KERNEL_ACCOUNT|__GFP_ZERO|__GFP_COMP), order=0, oom_score_adj=0
+[Sun Nov 22 00:46:56 2026] Out of memory: Killed process 1958 (python3) total-vm:2948572kB, anon-rss:1809804kB, file-rss:12kB, shmem-rss:0kB, UID:1000 pgtables:5620kB oom_score_adj:0
+
+=== systemd-oomd
+inactive

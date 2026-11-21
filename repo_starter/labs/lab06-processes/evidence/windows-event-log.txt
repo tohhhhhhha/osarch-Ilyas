@@ -1,0 +1,25 @@
+﻿=== Resource-Exhaustion-Detector/Operational (today)
+=== Resource-Exhaustion-Resolver/Operational
+
+
+TimeCreated : 11/21/2026 11:51:44 AM
+Id          : 1015
+Message     : The Windows Resource Exhaustion Resolver received an event from the Windows Resource 
+              Exhaustion Detector.
+
+TimeCreated : 11/21/2026 11:51:44 AM
+Id          : 1001
+Message     : The Windows Resource Exhaustion Resolver started.
+
+
+
+=== System log, Id 2004 (any provider)
+
+
+TimeCreated  : 10/25/2026 12:17:18 AM
+ProviderName : Microsoft-Windows-Setup
+Id           : 2004
+Message      : Successfully logged OS information
+
+
+
