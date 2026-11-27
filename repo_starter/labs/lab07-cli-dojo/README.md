@@ -1,6 +1,6 @@
 # Lab 7 — CLI dojo
 
-Pair: myself                   Driver first half:
+Student: myself, no pair
 Machine: MacBook host, VMware Fusion, Windows guest
 Date: 2026-11-28 (start 12:23:14 on the guest clock)
 Shell: cmd.exe (PowerShell not needed); prompt set with `prompt $T$S$P$G` so every line shows the clock
